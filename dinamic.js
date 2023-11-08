@@ -1,17 +1,13 @@
-
+function goto () {
 const loginButton=document.getElementById("enter");
 const email = document.getElementById('email');
 const pass = document.getElementById('pass');
-
-loginButton.addEventListener("click",function () {
     if(email.value == "ashikur201.cse@gmail.com" && pass.value==1234){
-        window.location.href='trans.html'
+        window.location='trans.html'
     }else{
         alert("Invalid Email or Password")
     }
-    
-    
-});
+};
 
  //Deposit Button 
  const DepositButton=document.getElementById("depositButton");
@@ -28,6 +24,7 @@ loginButton.addEventListener("click",function () {
     // document.getElementById("currentAmount").innerText=total;
     changeFieldValue("currentAmount",depositNumber);
     changeFieldValue("balanceAmount",depositNumber);
+    console.log("first");
 
     document.getElementById("depositAmount").value="0";
 
