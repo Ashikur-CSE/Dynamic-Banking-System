@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Bank Management</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div id="trans-area">
+        <div>
+            <div class="row">
+                <div class="col-8 col-sm-4">
+                    <div class="Deposit status">
+                        <h5>Deposit</h5>
+                        <h1>$ <span id="currentAmount">00</span></h2>
+                    </div>
+
+                </div>
+                <div class="col-8 col-sm-4">
+                    <div class="Withdraw status">
+                        <h5>Withdraw</h5>
+                        <h1>$ <span id="currentWithdraw">00</span></h2>
+                    </div>
+
+                </div>
+                <div class="col-8 col-sm-4">
+                    <div class="Balance status">
+                        <h5>Balance</h5>
+                        <h1>$ <span id="balanceAmount">1500</span></h2>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="main-area">
+            <div>
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <div class="t-status">
+                           <h3 class="m-3">Deposit</h3>
+                           <input type="text" class="form-control m-3" id="depositAmount" aria-describedby="emailHelp"
+                        placeholder="$ amount you want to deposit">
+                        <button  type="submit" id="depositButton" class="btn btn-success m-3">Deposit</button>
+                      
+
+                        </div>
+
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="t-status">
+                            <h3 class="m-3">Withdraw</h3>
+                            <input type="text" class="form-control m-3" id="withdrawAmount" aria-describedby="emailHelp"
+                        placeholder="$ amount you want to Withdraw">
+                        <button  type="submit" id="withdrawButton" class="btn btn-success m-3">Withdraw</button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <script src="dinamic.js"></script>
+
+</body>
+
+</html>

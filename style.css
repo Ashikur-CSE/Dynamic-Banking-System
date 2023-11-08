@@ -1,0 +1,88 @@
+.hh {
+  text-align: center;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.box {
+  background-color: teal;
+  height: 350px;
+  width: 1000px;
+  margin: 0 auto;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-top: 70px;
+}
+.inputF {
+  height: 40px;
+  width: 500px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 50px;
+  border: 1px solid;
+  border-radius: 5px;
+  text-align: center;
+  background-color: navajowhite;
+  font-size: 20px;
+}
+.subBtn {
+  height: 36px;
+  width: 90px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 50px;
+  border: 1px solid;
+  border-radius: 5px;
+  text-align: center;
+}
+.subBtn:hover {
+  background-color: red;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: bolder;
+}
+.heading {
+  text-align: center;
+  margin-top: 150px;
+  margin-bottom: 70px;
+}
+.form-area {
+  width: 900px;
+  margin: 0 auto;
+  border-radius: 20px;
+}
+.in-form {
+  padding: 10px 30px;
+}
+.btn {
+  background-color: coral;
+  color: black;
+}
+#trans-area {
+  box-sizing: border-box;
+}
+
+.Deposit {
+  background-color: rgb(12, 70, 127);
+}
+
+.Withdraw {
+  background-color: rgb(80, 8, 111);
+}
+.Balance {
+  background-color: rgb(132, 15, 73);
+}
+.status {
+  margin: 50px 60px;
+  padding: 30px;
+  border-radius: 10px;
+  color: white;
+}
+.t-status {
+  margin: 20px 50px;
+  box-shadow: 4px 4px 10px gray;
+  padding: 40px;
+  border-radius: 10px;
+  background-color: snow;
+}
