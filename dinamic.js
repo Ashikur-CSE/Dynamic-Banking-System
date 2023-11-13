@@ -9,72 +9,87 @@ const pass = document.getElementById('pass');
     }
 };
 
- //Deposit Button 
- const DepositButton=document.getElementById("depositButton");
- DepositButton.addEventListener("click",function ()
-  {
-    const depositAmount=document.getElementById("depositAmount").value;
-    const depositNumber=parseFloat(depositAmount);
 
-    // const currentAmount=document.getElementById("currentAmount").innerText;
-    // const currentAmountNumber=parseFloat(currentAmount);
+//Convert value text to float
+function getValue(iden){
+    const depositAmount=document.getElementById(iden);
+    const depositNumberAmount=parseFloat(depositAmount.value);
+    depositAmount.value="0";
+    
+    return depositNumberAmount;
+};
+//convert innerText to float
+function changeWithdraw(id){
+    const current=document.getElementById(id);
+    const currentNumber=parseFloat(current.innerText);
 
-    // const total=depositNumber+currentAmountNumber;
+    return currentNumber;
+};
 
-    // document.getElementById("currentAmount").innerText=total;
-    changeFieldValue("currentAmount",depositNumber);
-    changeFieldValue("balanceAmount",depositNumber);
-    console.log("first");
 
-    document.getElementById("depositAmount").value="0";
 
-    // const balanceAmount=document.getElementById("balanceAmount").innerText;
-    // const balanceNumber=parseFloat(balanceAmount);
-    // const totalBalance=balanceNumber+depositNumber;
 
-    // document.getElementById("balanceAmount").innerText=totalBalance;
 
-     
- });
 
- function changeFieldValue(id,depositNumber){
-    const currentAmount=document.getElementById(id).innerText;
-    const currentAmountNumber=parseFloat(currentAmount);
+//Change amount in diposite and total balance
+function changeFieldValue(id,depositNumber){
+    const currentAmountNumber = changeWithdraw(id);
 
     const total=depositNumber+currentAmountNumber;
     document.getElementById(id).innerText=total;
 
  };
 
+ //Handle withdraw Button
+ function handleDiposite(id1,id2){
+    const withdrawNumber = getValue("withdrawAmount");
+    const withdraw=changeWithdraw(id1);
+    const balance=changeWithdraw(id2);
 
+    const totalWithdraw=withdraw+withdrawNumber;
+    const netBalance=balance-withdrawNumber;
+
+    document.getElementById(id1).innerText=totalWithdraw;
+    document.getElementById(id2).innerText=netBalance;
+};
+
+
+
+
+ //Deposit Button 
+ const DepositButton=document.getElementById("depositButton");
+ DepositButton.addEventListener("click",function ()
+  {
+    const depositNumber = getValue("depositAmount");
+    if (depositNumber > 0){
+        changeFieldValue("currentAmount",depositNumber);
+        changeFieldValue("balanceAmount",depositNumber);
+
+    }
+    else{
+        alert("Enter a valid amount");
+    }
+    
+ });
 
 
  //Withdraw Button
  const withdrawButton=document.getElementById("withdrawButton");
-    withdrawButton.addEventListener("click",function () {
-        const withdrawAmount=document.getElementById("withdrawAmount").value;
-        const withdrawNumber=parseFloat(withdrawAmount);
-
-        const withdraw=changeWithdraw("currentWithdraw");
-        const balance=changeWithdraw("balanceAmount");
-
-        const totalWithdraw=withdraw+withdrawNumber;
-        const netBalance=balance-withdrawNumber;
-
-        document.getElementById("currentWithdraw").innerText=totalWithdraw;
-        document.getElementById("balanceAmount").innerText=netBalance;
-
-        document.getElementById("withdrawAmount").value="0";
-
-
+    withdrawButton.addEventListener("click",function () {    
+        const totBalance = parseFloat(document.getElementById("balanceAmount").innerText);
+        const withAmount = parseFloat(document.getElementById("withdrawAmount").value);
+        if(withAmount > 0 && totBalance > withAmount){
+            handleDiposite("currentWithdraw","balanceAmount");
+        }
+        else{
+            alert("Insufficient Balance or Enter a valid Amount");
+        }
+        
         
     });
-    function changeWithdraw(id){
-        const current=document.getElementById(id).innerText;
-        const currentNumber=parseFloat(current);
-        return currentNumber;
+ 
+  
 
-    }
 
 
 
